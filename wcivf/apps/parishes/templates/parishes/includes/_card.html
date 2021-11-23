@@ -26,7 +26,8 @@
             <p><a href="{{ parish_council_election.sopn }}">View the official list of candidates (PDF).</a></p>
         {% elif parish_council_election.is_uncontested %}
             <p>
-                This election was uncontested because not enough candidates came forward to stand for it.
+                This election was uncontested because only one candidate came forward to stand for each available seat.
+                No votes will be cast, and the candidate/s below has/have been automatically declared the winner/s.
                 {% if parish_council_election.sopn %}<a href="{{ parish_council_election.sopn }}">See who was elected</a>.{% endif %}
             </p>
         {% endif %}
