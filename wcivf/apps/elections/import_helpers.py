@@ -315,7 +315,7 @@ class YNRBallotImporter:
                 "locked": ballot_dict["candidates_locked"],
             }
 
-            if ballot_dict["candidates_locked"]:
+            if ballot_dict["candidates_locked"] and ballot_dict["winner_count"]:
                 defaults["contested"] = (
                     len(ballot_dict["candidacies"])
                     > ballot_dict["winner_count"]
