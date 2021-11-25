@@ -348,9 +348,10 @@ class TestYNRImporterAddBallots:
             "ballot_paper_id": "local.sheffield.fulwood.2021-05-06",
             "winner_count": 1,
             "cancelled": False,
-            "candidates_locked": True,
+            "candidates_locked": False,
             "replaces": "local.sheffield.fulwood.2020-05-07",
             "last_updated": "2021-10-12T00:00:00+00:00",
+            "candidacies": [],
         }
 
     @pytest.fixture
@@ -416,7 +417,7 @@ class TestYNRImporterAddBallots:
                 "post": post,
                 "winner_count": 1,
                 "cancelled": False,
-                "locked": True,
+                "locked": False,
                 "ynr_modified": "2021-10-12T00:00:00+00:00",
             },
         )

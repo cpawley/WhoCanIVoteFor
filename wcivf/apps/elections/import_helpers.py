@@ -315,6 +315,12 @@ class YNRBallotImporter:
                 "locked": ballot_dict["candidates_locked"],
             }
 
+            if ballot_dict["candidates_locked"]:
+                defaults["contested"] = (
+                    len(ballot_dict["candidacies"])
+                    > ballot_dict["winner_count"]
+                )
+
             # only update this when using the recently_updated flag as otherwise
             # the timestamp will only be the modifed timestamp on the ballot
             # see BallotSerializer.get_last_updated in YNR
