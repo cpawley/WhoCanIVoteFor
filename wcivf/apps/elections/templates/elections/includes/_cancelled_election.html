@@ -8,6 +8,15 @@
     The poll for {{ object.post.label }} in the {{ object.election.name }}
     {% if object.election.in_past %}was{% else %}has been{% endif %}
     {% if object.replaced_by %}rescheduled{% else %}cancelled{% endif %}.
+
+    {% if not object.replaced_by %}
+        <p>This election {% if object.election.in_past %}will{% else %}did{% endif %}
+            not take place because <a href="{{ object.ynr_sopn_link }}">no candidates</a> have been
+            nominated to stand. A new election to fill the unclaimed seat{{ object.people|pluralize }}
+            {% if object.election.in_past %}will be{% else %}was{% endif %}
+            held within 35 working days of the original election date.</p>
+    {% endif %}
+
     {% if object.replaced_by %}
         {% if object.election.in_past %}
             It was rescheduled for
