@@ -22,7 +22,7 @@
                         <td>{{ person_post.post.label }}: {{ person_post.election }}</td>
                         <td>{{ person_post.party_name }}</td>
                         {% if person_post.elected %}
-                            <td>{% if person_post.votes_cast %}{{ person_post.votes_cast|intcomma }} votes (elected){% else %}Vote count not available (elected){% endif %}</td>
+                            <td>{% if person_post.votes_cast %}{{ person_post.votes_cast|intcomma }} votes (elected){% else %}Elected unopposed{% endif %}</td>
                         {% else %}
                             <td>{% if person_post.votes_cast %}{{ person_post.votes_cast|intcomma }} votes (not elected){% else %}Vote count not available{% endif %}</td>
                         {% endif %}
