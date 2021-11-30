@@ -27,9 +27,6 @@
             {{ object.replaced_by.election.election_date|date:"j F Y" }}
         </a>
     {% endif %}
-    {% if object.metadata.cancelled_election.detail %}
-        {{ object.metadata.cancelled_election.detail }}
-    {% endif %}
     {% if object.metadata.cancelled_election.url %}
         <a href="{{ object.metadata.cancelled_election.url }}">Read more</a>
     {% endif %}
