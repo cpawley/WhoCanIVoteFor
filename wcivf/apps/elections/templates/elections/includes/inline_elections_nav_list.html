@@ -61,9 +61,11 @@
             {% include 'referendums/includes/_list.html' with referendums=referendums %}
         {% endif %}
 
-        <p>There may also be parish, town or
-            community council elections in some areas.
-        </p>
+        {% if not ballot.election.contested and not ballot.election.ynr_sopn_link %}
+            <p>There may also be parish, town or
+                community council elections in some areas.
+            </p>
+        {% endif %}
 
         <p><a href='#where'>Where do I vote?</a></p>
 
