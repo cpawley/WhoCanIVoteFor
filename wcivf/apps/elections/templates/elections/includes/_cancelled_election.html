@@ -1,8 +1,10 @@
 {% load markdown_deux_tags %}
-{% if object.metadata.cancelled_election.title %}
-    <h2>{{ object.metadata.cancelled_election.title }}</h2>
-{% else %}
-    <h2>Cancelled Election</h2>
+{% if object.election.winner_count == object.election.people.count %}
+    <b>Uncontested Election</b>
+{% elif object.election.people.count >= 1 and not object.election.winner_count == object.election.people.count%}
+    <b>Uncontested and Rescheduled Election</b>
+{% else  %}
+    <b>Rescheduled Election</b>
 {% endif %}
 <p>
     The poll for {{ object.post.label }} in the {{ object.election.name }}
