@@ -55,7 +55,6 @@ INSTALLED_APPS = (
     "profiles",
     "feedback",
     "hustings",
-    "peoplecvs",
     "leaflets",
     "debug_toolbar",
     "django_extensions",
